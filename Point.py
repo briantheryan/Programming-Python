@@ -6,8 +6,11 @@ class Point:
         self.x = x
         self.y = y
 
-    def to_string(self):
+    def __str__(self):
         return "({0}, {1})".format(self.x, self.y)
 
     def reflect_x(self):
-        return((self.x * -1) + self.y
+        return self.x, -1 * self.y
+
+    def slope_from_origin(self):
+        return float(self.y)/self.x
