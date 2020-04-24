@@ -13,4 +13,4 @@ class Point:
         return self.x, -1 * self.y
 
     def slope_from_origin(self):
-        return float(self.y)/self.x
+        return self.y/self.x
