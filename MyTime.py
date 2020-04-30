@@ -30,3 +30,11 @@ class MyTime:
     def after(self, time2):
         """Returns TRUE if self is greater than time2"""
         return self.to_seconds() > time2.to_seconds()
+
+    def increment(self, secs):
+        secs = self.to_seconds() + secs.to_seconds()
+        self.hours = secs // 3600
+        leftoversecs = secs % 3600
+        self.minutes = leftoversecs // 60
+        self.seconds = leftoversecs % 60
+        return self.hours, self.minutes, self.seconds
