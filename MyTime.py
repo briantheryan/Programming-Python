@@ -4,7 +4,7 @@ class MyTime:
         """Create a MyTime object initialized to hrs, mins, secs """
         self.hours = hrs
         self.minutes = mins
-        self. seconds = secs
+        self.seconds = secs
 
         totalsecs = hrs * 3600 + mins * 60 + secs
         self.hours = totalsecs // 3600
@@ -12,6 +12,8 @@ class MyTime:
         self.minutes = leftoversecs // 60
         self.seconds = leftoversecs % 60
 
+    def __gt__(self, t2):
+        return self.after(t2)
 
     def add_time(t1, t2):
         secs = t1.to_seconds() + t2.to_seconds()
@@ -22,4 +24,9 @@ class MyTime:
         return self.hours * 3600 + self.minutes * 60 + self.seconds
 
     def between(self, t1, t2):
+        """ Returns TRUE if time lies between t1 and t2"""
         return t1.to_seconds() <= self.to_seconds() < t2.to_seconds()
+
+    def after(self, time2):
+        """Returns TRUE if self is greater than time2"""
+        return self.to_seconds() > time2.to_seconds()
