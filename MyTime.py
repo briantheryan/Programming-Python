@@ -22,8 +22,4 @@ class MyTime:
         return self.hours * 3600 + self.minutes * 60 + self.seconds
 
     def between(self, t1, t2):
-
-        if t1 <= self < t2:
-            return "True"
-        else
-            return "False"
+        return t1.to_seconds() <= self.to_seconds() < t2.to_seconds()
