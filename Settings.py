@@ -5,12 +5,16 @@ class Settings:
         self.resolution = resolution
         self.fps = fps
 
-    def currentcolor(self):
-        print("The current color is " + self.color)
+    def change(self):
+        self.color = input("Enter a new color")
+        self.size = input("Enter the size")
+        self.resolution = input("Enter the resolution")
+        self.fps = input("Enter the FPS")
+        print()
 
 s1 = Settings()
-print(s1.resolution)
-print(s1.currentcolor())
+print(s1.color)
+print(s1.change())
 
 
 
